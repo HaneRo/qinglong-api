@@ -3,10 +3,11 @@ name: Publish Python 🐍 distributions 📦 to PyPI and TestPyPI
 on:
   push:
     branches: [release]
+  workflow_dispatch:  # 添加这个事件以允许手动触发
 jobs:
   build-n-publish:
     name: Build and publish Python 🐍 distributions 📦 to PyPI and TestPyPI
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest  # 修改为最新版本的 runner
     steps:
     - uses: actions/checkout@master
     - name: Set up Python 3.9
